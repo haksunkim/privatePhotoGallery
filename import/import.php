@@ -16,7 +16,7 @@
 		$album = new Album("import",IMPORT_PATH); 
 		
 		$album->setPhotos();
-			
+			 
 		foreach($album->getPhotos() as $photo) {
 			echo($photo->getFilePath());
 			echo("<img src='".$photo->getFilePath()."'>");
