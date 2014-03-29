@@ -1,20 +1,25 @@
 <?php
 	class Photo {
-		private $name = "";
-		private $filePath = "";
-		private $comments = array();
+		public $id = 0;
+		public $album_id = 0;
+		public $filename = "";
+		public $imagepath = "";
+		public $thumbpath = "";
+		public $caption = "";
+		public $dt_added = "";
+		public $createdby = "";
 		
-		public function __construct($name, $filePath) {
-			$this->name = $name;
-			$this->filePath = $filePath;
-		}
+		public $comments = array();
 		
-		public function getName() {
-			return $this->name;
-		}
-		
-		public function getFilePath() {
-			return $this->filePath;
+		public function __construct($id, $album_id, $filename, $imagepath, $thumbpath, $caption, $dt_added, $createdby) {
+			$this->id = $id;
+			$this->album_id = $album_id;
+			$this->filename = $filename;
+			$this->imagepath = $imagepath;
+			$this->thumbpath = $thumbpath;
+			$this->caption = $caption;
+			$this->dt_added = $dt_added;
+			$this->createdby = $createdby;
 		}
 	}
 ?>

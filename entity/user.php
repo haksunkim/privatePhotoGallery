@@ -1,28 +1,12 @@
 <?php
 	class User {
-		private $userID = '';
+		public $userid = '';
 		private $passwd = '';
-		private $username = '';
-		private $role = '';
-		
-		public function setUserID(string $userID) {
-			$this->userID = $userID;
-		}
-		
-		public function getUserID() {
-			return $this->userID; 
-		}
-		
-		public function getUsername() {
-			return $this->username;
-		}
-		
-		public function getRole() {
-			return $this->role;
-		}
+		public $username = '';
+		public $role = '';
 		
 		public function __construct($userID, $username, $role) {
-			$this->userID = $userID;
+			$this->userid = $userID;
 			$this->username = $username;
 			$this->role = $role;
 		}

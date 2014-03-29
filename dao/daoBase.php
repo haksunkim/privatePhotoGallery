@@ -1,5 +1,5 @@
 <?php
-	require_once("./env/dao_env.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/env/dao_env.php");
 	
 	abstract class DaoBase {
 		protected function connect() {
@@ -18,6 +18,10 @@
 			$conn->query("SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ;") or die("Error in the consult.." . mysqli_error($conn));
 			
 			return $resultset;
+		}
+		
+		protected function insert($conn, $query) {
+			mysqli_query($conn, $query) or die ("Error: ".mysqli_error($conn));
 		}
 	}
 ?>
