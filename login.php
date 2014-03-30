@@ -19,53 +19,37 @@
 			header("location: index.php");
 			exit();
 		}
-		session_destroy();	
-		/*
-		$auth_users = json_decode(file_get_contents("/home/familyphoto/users.json"))->user;
-		
-		var_dump($auth_users[1]);
-		
-		foreach($auth_users as $auth_user) {
-			if (   $_POST["userid"] == $auth_user->userid 
-				&& $_POST["passwd"] == $auth_user->passwd ) {
-				$user = new User();
-				$user->setUserID($_POST["userid"]);
-				$_SESSION['user'] = serialize($user);
-				
-				header("location: index.php");
-				exit();
-			}
-		}
-		*/
+		session_destroy();
 	}
 ?>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <html>
+	<head>
+		<meta charset='utf-8'/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="stylesheet" href="styles/style.css">
+		<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<title><?php echo(WEBPAGE_TITLE);?></title>
+	</head>
 	<body>
-		<form method="POST" action="login.php">
-			<table>
-				<tr>
-					<td>
-						아이디: 
-					</td>
-					<td>
-						<input type="text" name="userid" id="userid"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						패스워드: 
-					</td>
-					<td>
-						<input type="password" name="passwd" id="passwd"/>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<input type="submit" name="btnLogin" id="btnLogin" value="로그인"/>
-						<a href="register.php">가입하기</a>
-					</td>
-				</tr>
-			</table>
+		<form method="POST" action="login.php" class="login">
+			<p>
+			  <label for="login">아이디:</label>
+			  <input type="text" name="userid" id="userid">
+			</p>
+
+			<p>
+			  <label for="password">패스워드:</label>
+			  <input type="password" name="passwd" id="passwd">
+			</p>
+
+			<p class="login-submit">
+			  <button type="submit" name="btnLogin" id="btnLogin" class="login-button">로그인</button>
+			</p>
 		</form>
 	</body>
 </html>

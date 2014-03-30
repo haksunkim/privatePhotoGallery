@@ -1,4 +1,5 @@
 <?php
+	require($_SERVER['DOCUMENT_ROOT']."/include/global/pre_check.php");
 	require_once($_SERVER['DOCUMENT_ROOT']."/env/global_env.php");
 	
 	if (isset($_GET["path"])) {

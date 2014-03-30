@@ -46,8 +46,10 @@
 								,name
 								,dt_added
 								,createdby
-								,cover
-						FROM	album;";
+								,CASE WHEN cover IS NOT NULL AND cover != '' THEN cover
+								ELSE (SELECT thumbpath FROM photo WHERE album_id = album.id ORDER BY id LIMIT 1)
+								END as cover
+						FROM	album as album;";
 						
 			$resultset = self::selectUncommitted($conn, $query);						
 			self::close($conn);
